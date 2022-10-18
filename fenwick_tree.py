@@ -24,6 +24,19 @@ class FenwickTree:
         # Update the array to the one passed in the parameters
         for i in range(0, self.len - 1):
             self.update(i, array[i])
+    def __init__(self, array):
+
+        self.len = len(array)+1
+
+        # Initialize an array of length n+1 to 0
+
+        self.arr = [0] * self.len
+
+        # Update the array to the one passed in the parameters
+
+        for i in range(0, self.len - 1):
+
+            self.update(i, array[i])
 
     def update(self, index, val):
         j = index+1
