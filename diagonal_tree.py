@@ -36,3 +36,33 @@ def diagonal_print(root):
         for j in diagonal_map[i]:
             print(j, end=" ")
         print('')
+        
+        
+        
+#Python program for diagonal traversal of binary tree
+#importing binarytree module for creating binary tree
+from binarytree import Node
+#function to print diagonal elements
+def diagtrav(r):
+#empty list to store diagonal elements
+    d=[]
+#Node to signal end of diagonal
+    s=Node(-10)
+#extracting the first diagonal
+    while r:
+        d.append(r)
+        r=r.right
+#appending signal node
+    d.append(s)
+#printing diagonals and side by side appending the next diagonal and printing till all diagonals are printed 
+    while len(d)!=1:
+        f=d.pop(0)
+        if f!=s:
+            print(f.value,end=' ')
+            n=f.left
+            while n:
+                d.append(n)
+                n=n.right
+        else:
+            d.append(s)
+            print()
